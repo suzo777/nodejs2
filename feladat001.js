@@ -1,4 +1,9 @@
-const http = require('http');	
-const server = http.createServer((req, res) => {
-    res.end('Hello World!\n');
-}).listen(4000);
+const express = require("express");
+const app = express();
+app.get("/", (req, res) => {
+    console.log(req.url);
+    res.send("Hello World!\n");
+});
+app.listen(4000, () => {
+    console.log("A szerver elindult a 4000-es porton.");
+});
