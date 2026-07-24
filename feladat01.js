@@ -2,7 +2,7 @@ const express = require("express");
 const { MongoClient } = require("mongodb");
 const app = express();
 const port = 8080;
-const url = "mongodb+srv://suzo777_db_user:6uGkLqXb9oK3vt8f@proba1.qxslzxs.mongodb.net/";
+const url = process.env.MONGODB_PASSW;
 const client = new MongoClient(url);
 app.get("/", async (req, res) => {
     try {
